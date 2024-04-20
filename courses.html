@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=divice-width, initial-scale=1.0">
+    <title>Courses</title>
+    <link rel="stylesheet" type="text/css" href="./Assignment1.css">
+    <script defer src="./courses.js"></script>
+</head>
+
+<body>
+    <header>
+        <!-- Navigation Bar -->
+        <nav>
+            <ul>
+                <li><a href="./courses.html">Courses</a></li>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./resume.html">My resume</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Main Content -->
+    <h1 id="h1">Courses</h1>
+    <div id="top-container">
+        <!-- Search and Filters -->
+        <div class="sort-filter">
+            <input type="text" placeholder="Search courses" id="searchBar">
+            <button id="searchButton" onclick="searchClass()">Search</button>
+        </div>
+        <div id="filter-by-level" class="sort-filter">
+            <label for="level-filter">Filter by Level:</label>
+            <select id="level-filter" onchange="filterForClass()">
+                <option value="level-all">all level</option>
+                <option value="level-1">level 1</option>
+                <option value="level-2">level 2</option>
+            </select>
+        </div>
+        <div id="sort-by-level" class="sort-filter">
+            <label for="sort-order">Sort by Level:</label>
+            <select id="sort-order" onchange="sortClass()">
+                <option value="low-to-high">lowest to highest</option>
+                <option value="high-to-low">highest to lowest</option>
+            </select>
+        </div>
+    </div>
+    <!-- Course Listings -->
+    <div class="courses-container" id="coursesDiv"> 
+        <span><b>level</b></span>
+        <span><b>code</b></span>
+        <span><b>title</b></span>
+        <span><b>img</b></span>
+        <span><b>description</b></span>
+    </div>
+    <!-- Footer -->
+    <footer>
+        <a href="#h1">Top of Page</a>
+        <small>Formatting and code by Jia Hong Shih.</small>
+    </footer>
+</body>
+
+</html>

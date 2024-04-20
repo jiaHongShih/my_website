@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My resume</title>
+    <link rel="stylesheet" type="text/css" href="./Assignment1.css">
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="./courses.html">Courses</a></li>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./resume.html">My resume</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Main Content -->
+    <main>
+        <h1 id="h1">About Me</h1>
+        <div class="info">
+            <span>Jia Hong Shih &nbsp;(343)987-9092&nbsp;|&nbsp;</span>
+            <address>shih0010@algonquinlive.com</address>
+        </div>
+        <section>
+            <h3 class="resume">Education</h3>
+            <em>Computer Programming and Analysis, Algonquin College, Ottawa, ON— Advanced Diploma</em>
+            <ul>
+                <li>Dean’s Honor’s List; GPA 4.0 / 4.0</li>
+                <li>Select Coursework: Object Oriented Programming (Java), Operating Systems (Linux, Windows), Database
+                    (SQL), Web Programming (HTML, CSS, PHP, JavaScript), Technical Writing</li>
+            </ul>
+            <em>Political Science, National Chengchi University, Taipei, Taiwan — Bachelor of Arts</em>
+            <ul>
+                <li>Academic Excellence Award; GPA 3.88 / 4.0</li>
+                <li>Relevant Select Coursework: Statistics (R), Political Science Methodology (Stata)</li>
+            </ul>
+            <hr>
+            <h3 class="resume">
+                Program-Related Skills
+            </h3>
+            <ul>
+                <li>
+                    Programming Languages: Java, PHP, JavaScript, HTML/CSS
+                </li>
+                <li>
+                    Operating Systems: Windows 11, Ubuntu, Linux, MacOS
+                </li>
+                <li>
+                    Database Management Systems: PostgreSQL, Microsoft Access, Oracle, Microsoft SQL Server
+                </li>
+                <li>
+                    Software Tools: Eclipse, Microsoft Office, Parallels, VMWare Fusion, VMWare Workstation, SQL Server
+                    Management Studio 2017, MySQL Workbench, R, Stata, XAMPP
+                </li>
+            </ul>
+            <hr>
+            <h3 class="resume">
+                Additional Qualifications
+            </h3>
+            <ul>
+                <li>
+                    Highly organized, flexible in a changing environment, deadline driven and able to handle multiple
+                    tasks effectively.
+                </li>
+                <li>
+                    Technologically savvy and passionate about technology and solving real-world business challenges.
+                </li>
+                <li>
+                    Comply with your job's laws, rules, data governance, professional ethics, and industry standards.
+                </li>
+                <li>
+                    Learning and applying troubleshooting skills and procedures, you can take the lead and carry out
+                    diagnostics on a variety of industrial automation controllers, sensors, data-collecting devices, and
+                    interfaces.
+                </li>
+            </ul>
+            <hr>
+            <h3 class="resume">
+                Academic Projects
+            </h3>
+            <a href="https://github.com/jiaHongShih/try" id="github">Library Database Management System</a>
+            <ul>
+                <li>
+                    Design and develop database architecture for information systems projects
+                </li>
+                <li>
+                    Develop and implement data administration policy, standards and models
+                </li>
+                <li>
+                    Write scripts related to stored procedures and triggers
+                    <pre>
+                        <code id="code">
+DROP TRIGGER IF EXISTS CheckFineBeforeBorrow;
+GO
+CREATE TRIGGER CheckFineBeforeBorrow
+ON BorrowCollection
+FOR INSERT
+AS
+BEGIN
+DECLARE @PatronID INT;
+DECLARE @TotalFine DECIMAL(10, 2);
+SELECT @PatronID = PatronID FROM inserted;
+SELECT @TotalFine = SUM(Fine.Amount)
+FROM Fine
+INNER JOIN BorrowCollection ON Fine.ID = BorrowCollection.FineID
+INNER JOIN Patron ON BorrowCollection.PatronID = Patron.ID
+WHERE Fine.ID IN (
+SELECT FineID
+FROM BorrowCollection
+WHERE PatronID = @PatronID)
+GROUP BY Patron.ID;
+IF @TotalFine > 0
+BEGIN
+DECLARE @ErrorMessage NVARCHAR(100);
+SET @ErrorMessage = 'Cannot borrow. You have unpaid fine of ' + CONVERT(NVARCHAR(20), @TotalFine) + ' HKD.';
+RAISERROR (@ErrorMessage, 16, 1);
+ROLLBACK TRANSACTION;
+END
+END;
+                        </code>
+                    </pre>
+                </li>
+                <li>
+                    <img src="./img/DatabaseForm.png" alt="The Interface of Database Form" class="photo">Design a simple
+                    and easy-to-understand form to simplify the cumbersome data insertion process
+                </li>
+                <li id="under-pic">
+                    Referencing usage scenarios, establish appropriate triggers and data constraints to enhance
+                    usability and reduce error rates
+                </li>
+            </ul>
+
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer>
+        <a href="#h1">Top of Page</a>
+        <small>Formatting and code by Jia Hong Shih.</small>
+    </footer>
+</body>
+
+</html>

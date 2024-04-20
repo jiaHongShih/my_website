@@ -1,0 +1,189 @@
+/* 
+author: Jia Hong Shih
+this is a css stylesheet for assignmen1 
+include courses.html, index.html, resume.html
+*/
+
+* {
+    background-color: #c7f4ae;
+    color: rgb(5, 15, 0);
+}
+
+header {
+    background-color: #56e48c;
+    padding: 5px 10px;
+    border-radius: 10px;
+    position: fixed;
+    top: 10px;
+    min-width: 90%;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    background-color: #56e48c;
+}
+
+nav li {
+    margin: 0 5px;
+}
+
+nav a {
+    color: #023415;
+    /* Text color */
+    text-decoration: none;
+    /* Remove underline */
+    padding: 5px 5px;
+    /* Add padding for spacing */
+    border-radius: 5px;
+    /* Add border radius for rounded corners */
+    transition: background-color 0.3s ease;
+    /* Smooth transition */
+    background-color: #56e48c;
+}
+
+nav a:hover {
+    background-color: #555;
+    /* Darken background color on hover */
+}
+
+footer {
+    clear: both;
+    margin-top: 10px;
+    background-color: #56e48c;
+    padding: 5px 10px;
+    color: inherit;
+    border-radius: 10px;
+
+}
+
+footer small,
+footer a {
+    display: block;
+    text-align: center;
+    background-color: inherit;
+}
+
+small {
+    font-size: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: #2e657c;
+    background-color: inherit;
+    font-size: 12pt;
+}
+
+a:hover {
+    color: #8B635C;
+}
+
+img {
+    float: left;
+    width: 50%;
+    height: auto;
+    margin-right: 10px;
+    margin-bottom: 5px;
+}
+
+#h1 {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-style: italic;
+    font-size: 12px;
+}
+
+.resume {
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+#github {
+    display: flex;
+    margin: 0%;
+    justify-content: center;
+    align-items: center;
+}
+
+#code {
+    font-size: 10px;
+    
+}
+pre {
+    margin-top: 0%;
+    margin-bottom: 0%;
+    overflow-x: auto; 
+    white-space: pre-wrap;
+    word-wrap: break-word; 
+}
+
+main ul li{
+    margin-top: 10px;
+}
+
+main ul li img{
+    float: right;
+    min-width: 30%;
+    height: auto;
+}
+
+#under-pic {
+    clear: both;
+}
+
+#top-container {
+    justify-content: space-around; 
+    text-align: center;
+}
+
+.sort-filter {
+    display: inline-block;
+    margin: 5px 10px;
+    justify-content: center;
+}
+
+.courses-container {
+    display: grid;
+    grid-template-columns:5% 10% 15% 25% 45% ;
+    border: 2px double   #0b5201;
+
+}
+
+.courses-container > span {
+    padding: 10px;
+    border: 1px solid #0b5201;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.courses-container > span img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+@media (max-width: 600px) {
+    .courses-container {
+        grid-template-columns: 1fr;
+    }
+    #my-photo,.photo {
+        width: 100%;
+        float: none;
+    }
+}
