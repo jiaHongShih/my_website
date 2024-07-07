@@ -33,8 +33,8 @@ function randomSelect() {
     if (options.length > 0) {
         const randomIndex = Math.floor(Math.random() * options.length);
         const selectedOption = options[randomIndex];
-        document.getElementById('result').textContent = `隨機選取的結果是：${selectedOption}`;
+        document.getElementById('result').textContent = `Your Cat Name will be: ${selectedOption}`;
     } else {
-        document.getElementById('result').textContent = '請先添加一些選項！';
+        document.getElementById('result').textContent = 'Dude! Add some name FIRSTTTTT';
     }
 }
