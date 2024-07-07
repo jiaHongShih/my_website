@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Name</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        input, button {
+            margin: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Enter the name u want</h1>
+    <input type="text" id="userInput" placeholder="Patrick">
+    <button onclick="addOption()">Add this</button>
+    <button onclick="removeOption()">Delete the former one</button>
+    <button onclick="randomSelect()">random decide</button>
+    <ul id="optionsList"></ul>
+    <h2 id="result"></h2>
+
+    <script src="script.js"></script>
+</body>
+</html>
